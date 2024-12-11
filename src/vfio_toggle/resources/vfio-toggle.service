@@ -1,0 +1,10 @@
+[Unit]
+Description=Toggle VFIO and NVIDIA Drivers
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/vfio-toggle.py
+
+[Install]
+WantedBy=multi-user.target

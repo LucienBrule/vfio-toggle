@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "vfio_toggle"
+version = "0.1.0"
+description = "A utility for toggling between VFIO and NVIDIA drivers on Linux."
+authors = ["Lucien Brule <lucien@lucienbrule.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [
+    { include = "vfio_toggle", from = "src" }
+]
+include = [
+    "src/resources/*"
+]
+
+[tool.poetry.scripts]
+vfio-toggle = "vfio_toggle.cli:main"
+generate-devices = "vfio_toggle.generate_devices:main"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+# deps go here
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
